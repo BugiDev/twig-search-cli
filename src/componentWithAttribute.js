@@ -21,7 +21,7 @@ module.exports = (flags, rootPath) => {
         progressBar.tick();
 
         if (contains.error) {
-            errors.push(filepath);
+            errors.push({filepath:filepath, message: contains.error});
         } else {
             if (contains.value) {
                 positives.push(filepath);

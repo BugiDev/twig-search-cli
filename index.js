@@ -28,7 +28,9 @@ const cli = meow(
       --value, -v Value of the attribute
       --parent, -p Name of the parrent component
       --child, -c Name of the child component
-      --output, -o Filepath to output results to`,
+      --output, -o Filepath to output results to
+
+      --no-color Disable color output in the console`,
     {
         alias: {
             n: 'name',
@@ -41,7 +43,11 @@ const cli = meow(
     });
 
 const clear = require('clear');
-const logger = require('./util/logger')(cli.flags.output);
+let color = true;
+if(cli.flags.hasOwnProperty('color')){
+    color = cli.flags.color;
+}
+const logger = require('./util/logger')(cli.flags.output, color);
 const chalk = require('chalk');
 
 clear();
@@ -69,7 +75,6 @@ switch (cli.input[0]) {
         break;
     default:
         throw new Error('Command not valid or not specified! Use --help to see available commands.');
-
 }
 
 if (results.positives.length > 0) {
@@ -83,7 +88,9 @@ if (results.positives.length > 0) {
     if (results.errors.length > 0) {
         logger.log('Errors:', chalk.red);
         results.errors.forEach((data) => {
-            logger.log(data, chalk.red);
+            logger.log(data.filepath, chalk.red);
+            logger.log(data.message, chalk.red);
+            logger.log('');
         });
     }
 

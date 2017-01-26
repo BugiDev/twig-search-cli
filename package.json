@@ -1,6 +1,6 @@
 {
   "name": "twig-search-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Command line tool for searching through .twig files for components or attributes",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,6 @@
     "clear": "^0.0.1",
     "meow": "^3.7.0",
     "progress": "^1.1.8",
-    "twig-search-core": "0.0.2"
+    "twig-search-core": "^0.0.3"
   }
 }
