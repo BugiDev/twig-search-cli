@@ -1,0 +1,29 @@
+{
+  "name": "twig-search-cli",
+  "version": "0.0.1",
+  "description": "Command line tool for searching through .twig files for components or attributes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "twig-search-cli": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BugiDev/twig-search-cli.git"
+  },
+  "author": "Bogdan Begovic <bogdanbegovic@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BugiDev/twig-search-cli/issues"
+  },
+  "homepage": "https://github.com/BugiDev/twig-search-cli#readme",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "clear": "^0.0.1",
+    "meow": "^3.7.0",
+    "progress": "^1.1.8",
+    "twig-search-core": "0.0.2"
+  }
+}
